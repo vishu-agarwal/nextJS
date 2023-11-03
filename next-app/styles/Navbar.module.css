@@ -1,0 +1,24 @@
+.navbar {
+    width: 100%;
+    height: 80px;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    justify-content: center;
+}
+
+.links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    color: rgb(72, 99, 21);
+    font-weight: 700;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: large;
+}
+
+.links a {
+    margin-left: 20px;
+}
+
