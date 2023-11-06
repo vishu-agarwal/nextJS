@@ -35,7 +35,7 @@ const AutoCompleteAddress = ({ onHandleLocation, where }: props) => {
             <div>
                 <label className='text-gray-400 capitalize'>{where}</label>
                 <Autocomplete
-                    onPlaceChanged={() => onPlaceChanged()}
+                    onPlaceChanged={onPlaceChanged}
                     onLoad={onLoad}
                 >
                     <input

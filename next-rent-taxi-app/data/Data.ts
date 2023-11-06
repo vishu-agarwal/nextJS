@@ -3,7 +3,7 @@ export const carList = [
         id: 1,
         name: 'Economy',
         image:'/12.png',
-        charges: 5
+        charges: 1.5
     },
     // {
     //     id: 2,
@@ -21,7 +21,7 @@ export const carList = [
         id: 4,
         name: 'Luxury',
         image:'/20.png',
-        charges: 20
+        charges: 2
     },
     {
         id: 5,
@@ -39,7 +39,7 @@ export const carList = [
         id: 7,
         name: 'Premium',
         image:'/15.png',
-        charges: 30
+        charges: 3
     },
     // {
     //     id: 8,
@@ -57,6 +57,6 @@ export const carList = [
         id: 10,
         name: 'Hybrid',
         image:'/23.png',
-        charges: 20
+        charges: 2
     },
 ]

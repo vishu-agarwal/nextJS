@@ -1,11 +1,13 @@
 "use client"
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import AutoCompleteAddress from './AutoCompleteAddress'
 import {
     useLoadScript
 } from "@react-google-maps/api";
 import Cars from './Cars';
 import Cards from './Cards';
+import { useRouter } from 'next/navigation';
+import { CarAmountDataContext } from '@/context/CarAmountContext';
 
 const placesLibrary: any = ["places"];
 
@@ -16,13 +18,14 @@ interface location {
     lng: number
 }
 
-
-
 interface props {
     onHandleDirection(location: any): void
 }
 
 const Booking = ({ onHandleDirection }: props) => {
+
+    const router = useRouter()
+    const { amount, setAmount } = useContext(CarAmountDataContext)
 
     const [location, setLocation] = useState({
         from: {
@@ -40,8 +43,8 @@ const Booking = ({ onHandleDirection }: props) => {
     });
 
     useEffect(() => {
-        if (location.from.name.length && location.to.name.length)
-            onHandleDirection(location)
+        // if (location.from.name.length && location.to.name.length)
+        onHandleDirection(location)
     }, [location])
 
     const { isLoaded } = useLoadScript({
@@ -60,7 +63,6 @@ const Booking = ({ onHandleDirection }: props) => {
     const onHandleLocation = (place: location, where: string) => {
         setLocation({ ...location, [where]: place })
     }
-    console.log("place location---", location)
 
     return (
         <div className='p-5'>
@@ -70,7 +72,13 @@ const Booking = ({ onHandleDirection }: props) => {
                 <AutoCompleteAddress onHandleLocation={onHandleLocation} where={"to"} />
                 <Cars />
                 <Cards />
-                <button className='w-full bg-[#fff901] p-1 rounded-md mt-4' >Book</button>
+                <button
+                    onClick={() => router.push('/payment')}
+                    className={`w-full bg-[#fff901] p-1 rounded-md mt-4 ${!amount ? 'bg-gray-200' : null} `}
+                    disabled={!amount}
+                >
+                    Book
+                </button>
             </div>
         </div>
     )
