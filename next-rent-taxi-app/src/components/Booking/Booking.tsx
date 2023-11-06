@@ -48,7 +48,7 @@ const Booking = ({ onHandleDirection }: props) => {
     }, [location])
 
     const { isLoaded } = useLoadScript({
-        googleMapsApiKey: "AIzaSyDwIVgIMPOY0UMpmXrqO0hOBNSTM7dH2pA",
+        googleMapsApiKey: "api key",
         libraries: placesLibrary
     });
 
