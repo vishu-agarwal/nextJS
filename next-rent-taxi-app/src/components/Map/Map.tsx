@@ -28,7 +28,7 @@ const Map = ({ directionsResponse, distance, duration, origin }: any) => {
   }, [origin])
 
   const { isLoaded } = useLoadScript({
-    googleMapsApiKey: "AIzaSyDwIVgIMPOY0UMpmXrqO0hOBNSTM7dH2pA",
+    googleMapsApiKey: "apikey",
     libraries: placesLibrary
   });
 
