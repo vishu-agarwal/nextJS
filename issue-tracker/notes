@@ -7,6 +7,14 @@ Prisma: inside projet directory
 	Create a model issue in schema.prisma file
 	npx prisma format
 	npx prisma migrate dev: apply migration
+install zod for validation
+install Radix UI
+	component library
+
+
+// apis
+
+http://localhost:3000/api/issues
 	
 	
 	
