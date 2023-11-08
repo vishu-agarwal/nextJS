@@ -1,0 +1,13 @@
+Prisma: inside projet directory
+
+	npm i prisma
+	npx prisma init 
+		change provider: mysql, postgress etch which use?
+		change .env file db url 
+	Create a model issue in schema.prisma file
+	npx prisma format
+	npx prisma migrate dev: apply migration
+	
+	
+	
+	
