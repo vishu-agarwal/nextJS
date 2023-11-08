@@ -17,3 +17,11 @@ export async function POST(request: NextRequest) {
 
     return NextResponse.json(newIssue, { status: 201 })
 }
+
+export async function GET() {
+
+    // https://www.prisma.io/docs/concepts/components/prisma-client/crud
+    const getAllIssue = await prisma.issue.findMany()
+
+    return NextResponse.json(getAllIssue, { status: 200 })
+}
