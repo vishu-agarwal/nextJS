@@ -5,8 +5,9 @@ import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 import IssueForm from '@/components/IssueForm';
 
-const NewIssuePage = () => {
+const UpdateIssuePage = ({ params }: any) => {
 
+    const id = params.id
     const router = useRouter()
 
     const [error, setError] = useState('')
@@ -15,7 +16,7 @@ const NewIssuePage = () => {
     const onSubmit = async (data: any) => {
         setSpinner(true)
         try {
-            await axios.post('/api/issues', data);
+            await axios.put('/api/issues', { id: id, ...data });
             setSpinner(false)
             router.push('/issues')
 
@@ -27,8 +28,10 @@ const NewIssuePage = () => {
     }
 
     return (
-        <IssueForm onSubmit={onSubmit} error={error} spinner={spinner} />
+        <>
+            <IssueForm onSubmit={onSubmit} error={error} spinner={spinner} id={id} />
+        </>
     )
 }
 
-export default NewIssuePage
+export default UpdateIssuePage
